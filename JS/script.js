@@ -175,3 +175,113 @@ if (form) {
     if (status) status.textContent = "Message ready (no backend connected).";
   });
 }
+// =========================
+// Projects: Filter + Search
+// =========================
+const FILTER_KEY = "projectFilter";
+const SEARCH_KEY = "projectSearch";
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+const searchInput = document.getElementById("projectSearch");
+const statusText = document.getElementById("projectsStatus");
+
+let currentFilter = "all";
+
+// Apply filtering + search
+function updateProjects() {
+  const searchValue = searchInput.value.toLowerCase().trim();
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const category = card.getAttribute("data-category");
+    const title = card.getAttribute("data-title");
+
+    const matchesFilter = currentFilter === "all" || category === currentFilter;
+
+    const matchesSearch = title.includes(searchValue);
+
+    if (matchesFilter && matchesSearch) {
+      card.style.display = "block";
+
+      // trigger fade-in
+      requestAnimationFrame(() => {
+        card.classList.remove("is-hidden");
+        card.classList.add("visible");
+      });
+
+      visibleCount++;
+    } else {
+      card.classList.remove("visible");
+      card.classList.add("is-hidden");
+
+      setTimeout(() => {
+        if (card.classList.contains("is-hidden")) {
+          card.style.display = "none";
+        }
+      }, 250);
+    }
+  });
+
+  // Update status text
+  if (visibleCount === 0) {
+    statusText.textContent =
+      "No projects found. Try a different keyword or filter.";
+  } else if (searchValue && currentFilter !== "all") {
+    statusText.textContent = `Showing ${visibleCount} project(s) for "${searchValue}" in ${currentFilter}.`;
+  } else if (searchValue) {
+    statusText.textContent = `Showing ${visibleCount} project(s) for "${searchValue}".`;
+  } else if (currentFilter !== "all") {
+    statusText.textContent = `Showing ${visibleCount} ${currentFilter} project(s).`;
+  } else {
+    statusText.textContent = "Showing all projects.";
+  }
+}
+
+// Handle filter buttons
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    currentFilter = btn.getAttribute("data-filter");
+
+    // Save filter
+    localStorage.setItem(FILTER_KEY, currentFilter);
+
+    updateProjects();
+  });
+});
+// Handle search input
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    localStorage.setItem(SEARCH_KEY, searchInput.value);
+    updateProjects();
+  });
+}
+// Restore saved state
+const savedFilter = localStorage.getItem(FILTER_KEY);
+const savedSearch = localStorage.getItem(SEARCH_KEY);
+
+// Restore filter
+if (savedFilter) {
+  currentFilter = savedFilter;
+
+  filterButtons.forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.getAttribute("data-filter") === savedFilter) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+// Restore search
+if (savedSearch && searchInput) {
+  searchInput.value = savedSearch;
+}
+
+// Initial fade-in on page load
+projectCards.forEach((card) => {
+  card.classList.add("visible");
+});
+
+updateProjects();

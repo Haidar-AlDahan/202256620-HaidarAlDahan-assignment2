@@ -1,48 +1,70 @@
+# AI Usage Report – Assignment 2
 
 ## AI Tools Used
 
 - ChatGPT
 
+---
+
 ## How AI Was Used
 
-AI was used during this assignment for:
+AI was used as a support tool during development for:
 
-1. Some HTML layout structuring and portfolio suggestions.
-2. Full CSS first implementaion based on my HTML implementation to begin modifying based ony my needs.
+1. Improving HTML structure and layout organization  
+2. Assisting in writing and refining CSS for responsive design  
 3. Implementing JavaScript features such as:
-   - Theme toggle (Light/Dark)
-4. Reviewing code structure and suggesting improvements.
-5. Help ensuring the page is responsive as required.
+   - Theme toggle (Light/Dark mode)
+   - Mobile navigation behavior
+   - Project filtering and search functionality  
+4. Debugging issues and identifying logic errors  
+5. Improving documentation clarity (README and technical documentation)
+
+---
+
 ## Modifications & Verification
 
-All AI-generated suggestions were reviewed and adjusted before being added to the project.
+All AI-generated code and suggestions were reviewed, tested, and modified before being used.
 
-Examples of modifications:
-- Adjusted variable naming for clarity.
-- Simplified validation logic for readability.
-- Modified CSS spacing and layout decisions.
+Examples of modifications include:
+- Adjusting logic for project filtering and search to match requirements
+- Refining localStorage usage for theme, filter, and search persistence
+- Simplifying code structure for readability and maintainability
+- Fixing UI behavior issues (e.g., mobile navigation, layout alignment)
 
-The final code reflects personal understanding and manual refinement.
+The final implementation reflects personal understanding and manual refinement.
+
+---
 
 ## Benefits of Using AI
 
-- Faster debugging.
-- Better understanding of clean layout structure.
-- Improved JavaScript organization.
-- Exposure to best practices in responsive design.
+- Faster debugging and issue identification  
+- Better understanding of structuring responsive layouts  
+- Helped implement interactive features more efficiently  
+- Improved code organization and readability  
+
+---
 
 ## Challenges & Limitations
 
-- Some suggestions required restructuring to match assignment constraints.
-- Certain design recommendations were simplified to avoid over-design.
-- Ensured that the final code remained understandable and maintainable.
+- Some AI suggestions were too complex and required simplification  
+- Certain solutions needed adjustments to meet assignment constraints  
+- Required careful review to ensure correctness and avoid over-reliance  
+
+---
 
 ## Learning Outcomes
 
-Through this process I improved:
-- Semantic HTML structuring
-- CSS layout control using Grid and Flexbox
-- Event handling in JavaScript
-- Responsible AI-assisted development workflow
+Through this process, I improved:
 
-AI was used as a support tool, not as a replacement for understanding.
+- Writing semantic HTML structure  
+- Building responsive layouts using CSS Grid and Flexbox  
+- Handling DOM events and user interaction in JavaScript  
+- Implementing client-side data persistence using localStorage  
+- Using AI responsibly as a development support tool  
+
+---
+
+## Conclusion
+
+AI was used to assist development, not replace it.  
+All code was reviewed, tested, and adapted to ensure full understanding and correctness.

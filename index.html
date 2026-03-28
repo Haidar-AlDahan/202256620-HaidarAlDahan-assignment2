@@ -142,9 +142,49 @@
           <div class="section-head">
             <h2>Projects</h2>
           </div>
+          <div class="projects-controls">
+            <div
+              class="filter-buttons"
+              role="group"
+              aria-label="Project filters"
+            >
+              <button class="filter-btn active" type="button" data-filter="all">
+                All
+              </button>
+              <button class="filter-btn" type="button" data-filter="mobile">
+                Mobile
+              </button>
+              <button class="filter-btn" type="button" data-filter="web">
+                Web
+              </button>
+            </div>
 
+            <div class="search-box">
+              <label for="projectSearch" class="search-label"
+                >Search projects</label
+              >
+              <input
+                type="text"
+                id="projectSearch"
+                placeholder="Search by project name or keyword"
+                aria-describedby="projectsStatus"
+              />
+            </div>
+          </div>
+
+          <p
+            id="projectsStatus"
+            class="muted projects-status"
+            aria-live="polite"
+          >
+            Showing all projects.
+          </p>
           <div class="grid projects-grid">
-            <article class="card project-card">
+            <article
+              class="card project-card"
+              data-category="mobile"
+              data-title="workout tracker flutter mobile fitness"
+            >
               <div class="project-image">
                 <img
                   src="assets/images/gym-tracker-app.png"
@@ -170,7 +210,11 @@
               </div>
             </article>
 
-            <article class="card project-card">
+            <article
+              class="card project-card"
+              data-category="web"
+              data-title="planet age weight calculator web space planets"
+            >
               <div class="project-image">
                 <img
                   src="assets/images/planet-project.png"

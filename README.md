@@ -20,6 +20,24 @@ The purpose of this assignment is to demonstrate:
 - Contact form with validation and user feedback
 - Smooth hover effects and UI transitions
 
+### Interactive Features (Assignment 2)
+
+- **Project Filtering**
+  - Filter projects by category (All, Mobile, Web)
+  - Updates instantly without page reload
+
+- **Project Search**
+  - Search projects using keywords
+  - Results update live as the user types
+
+- **User Feedback**
+  - Displays number of results
+  - Shows message when no projects are found
+
+- **Data Persistence**
+  - Selected filter and search input are saved using localStorage
+  - State is restored automatically after page refresh
+
 ---
 
 ## Project Structure
@@ -58,6 +76,11 @@ The website will run locally in your browser.
 
 ## How to Use the Website
 
+- Use the filter buttons to view specific categories
+- Use the search box to find projects by name or keyword
+- Filtering and search can be combined
+- Your last selected filter and search will be remembered after refresh
+
 ### Navigation
 
 - Use the navigation bar at the top to move between sections
@@ -65,7 +88,7 @@ The website will run locally in your browser.
 
 ### Theme Toggle
 
-- Click the **theme button** to switch between light and dark mode
+- Click the **theme toggle button** to switch between light and dark mode
 - Your preference is saved automatically
 
 ### Projects Section

@@ -69,6 +69,8 @@ This project does not require any installation or dependencies.
 3. Double-click `index.html`  
    OR  
    Right-click → Open with browser
+   OR
+   Write in the termenal of the project `start index.html`
 
 The website will run locally in your browser.
 
